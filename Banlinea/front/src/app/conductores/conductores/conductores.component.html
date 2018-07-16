@@ -1,0 +1,70 @@
+<br>
+<br>
+
+<div class="row">
+  
+    <div class="col-md-3 text-center">
+    </div>
+    <div class="col-md-6 text-center">
+      <ul class="list-group">
+        <h3> Conductores </h3>
+        <br>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 200px"> <p align="center">Nombre</p> </th>
+                <th scope="col" style="width: 200px"><p align="center">Apellido</p></th>
+                <th scope="col" style="width: 200px"><p align="center">Tipo Documento</p></th>
+                <th scope="col" style="width: 600px"><p align="center">Numero documento</p></th>
+                <th scope="col" style="width: 200px"><p align="center">Agregar</p></th>
+              </tr>
+            </thead>
+            <tbody>    
+                  <tr>
+                      <td>  <input [(ngModel)]="nombre" name="nombre" class="form-control" type="text" > </td>
+                      <td>  <input [(ngModel)]="apellido" name="apellido" class="form-control" type="text"> </td>
+                      <td>  <input [(ngModel)]="tipo" name="tipo"class="form-control" type="text" > </td>
+                      <td>  <input [(ngModel)]="numero" name="numero" class="form-control" type="text"> </td>
+                      <td><button type="button" class="btn btn-success" (click)="agregar()">Agregar</button></td>              
+                  </tr>
+            </tbody>
+          </table>
+        <br>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 200px"> <p align="center">Nombre</p> </th>
+                <th scope="col" style="width: 200px"><p align="center">Apellido</p></th>
+                <th scope="col" style="width: 200px"><p align="center">Tipo</p></th>
+                <th scope="col" style="width: 600px"><p align="center">Numero documento</p></th>
+                <th scope="col" style="width: 200px"><p align="center">Modificar</p></th>
+                <th scope="col" style="width: 200px"><p align="center">Eliminar</p></th>
+              </tr>
+            </thead>
+            <tbody  *ngFor="let conductor of conductores">
+          
+                  <tr > 
+                      <td>{{conductor.nombre}}</td>
+                      <td>{{conductor.apellido}}</td>
+                      <td>{{conductor.tipoDocumento}}</td>
+                      <td>{{conductor.numeroDocumento}}</td>
+                      <td><button type="button" class="btn btn-secondary" data-toggle="collapse" [attr.data-target]="'#' + conductor._id" >Modificar</button></td>
+                      <td><button type="button" class="btn btn-danger" (click)="eliminar(conductor._id)">Eliminar</button></td>    
+                  </tr>
+                  
+                  <tr id={{conductor._id}}  class="collapse">
+                      <td>  <input #nombreConductor class="form-control" type="text"  value="{{conductor.nombre}}"> </td>
+                      <td>  <input #apellidoConductor class="form-control" type="text"  value="{{conductor.apellido}}"> </td>
+                      <td>{{conductor.tipoDocumento}}</td>
+                      <td>{{conductor.numeroDocumento}}</td>
+                      <td><button type="button" class="btn btn-success" (click)="modificar(nombreConductor.value,apellidoConductor.value,conductor.tipoDocumento,conductor.numeroDocumento)">Guardar</button></td>  
+                      <td><button type="button" class="btn btn-danger" data-toggle="collapse" [attr.data-target]="'#' + conductor._id" >Cancelar</button></td>
+                      
+                  </tr>   
+            </tbody>
+          </table>
+
+       
+      </ul>
+    </div>
+  </div>  

@@ -1,0 +1,29 @@
+<br>
+<div class="container" id="wrap">
+  <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+          <form #formCtrl="ngForm" (ngSubmit)="signIn()">  
+            <br>
+            <br>
+             <legend>Iniciar sesion </legend> 
+             usuario -> banlinea , contraseña -> banlinea123 
+             <br>
+             usuario -> banlinea2 , contraseña -> banlinea123
+             <br>
+             <br>
+                  
+                  <input [(ngModel)]="username" name="username" class="form-control input-lg" placeholder="Usuario" />
+                   <br> 
+                  <input type="password" [(ngModel)]="password" name="password" class="form-control input-lg" placeholder="Clave"/>
+                 
+                
+                  
+                  <br />
+    
+                  <button  type="submit" class="btn btn-lg btn-primary btn-block signup-btn" >
+                      Iniciar sesion</button>
+                      {{mensaje}}
+          </form>          
+        </div> 
+</div>            
+</div>

@@ -1,0 +1,80 @@
+<br>
+<h3 align="center"> Asignar </h3>
+<br>
+<div class="row">
+    <div class="col-md-2 text-center">
+    </div>
+    <div class="col-md-8 text-center">
+        <div class="col-md-6 text-center">
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <h5>tipo de documento</h5>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <input [(ngModel)]="tipoDocumento" name="tipoDocumento" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <h5>Numero del documento</h5>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <input [(ngModel)]="numeroDocumento" name="numeroDocumento" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <h5>Placa</h5>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <input  [(ngModel)]="placas" name="placa" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <h5>Empresa</h5>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <input [(ngModel)]="empresa" name="empresa" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <h5>Pasajero</h5>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <input [(ngModel)]="pasajero" name="pasajero" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <button class="col-sm-6 text-center" type="button" class="btn btn-success" (click)="asignar(mapa1,mapa2)">Agregar</button>
+                </div>
+               
+                
+            </div>
+           
+        </div>
+        <div class="col-md-1 text-center">
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="col-sm-12 text-center">
+                <h4>
+                    seleccione punto de partida
+                </h4>
+                <app-maps #mapa1></app-maps>
+              </div>
+              
+    
+              <div class="col-sm-12 text-center">
+                  <h4>
+                      seleccione punto destino
+                  </h4>
+                <app-maps #mapa2></app-maps>
+              </div>
+        </div>
+    </div>
+</div>

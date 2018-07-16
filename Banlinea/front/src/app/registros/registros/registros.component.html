@@ -1,0 +1,35 @@
+<br>
+<h3 align="center"> Asignaciones </h3>
+<br>
+<div class="row">
+  
+    <div class="col-md-3 text-center">
+    </div>
+    <div class="col-md-6 text-center">
+      <ul class="list-group">
+
+        <br>
+        
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 200px"> <p align="center">Texto</p> </th>
+                <th scope="col" style="width: 200px"><p align="center">Fecha</p></th>
+                <th scope="col" style="width: 200px"><p align="center">IP</p></th>
+              </tr>
+            </thead>
+            <tbody  *ngFor="let registro of registros">
+          
+                  <tr>
+                    
+                      <td >{{registro.texto}} </td>
+                      <td > {{registro.fecha}} </td>
+                      <td>{{registro.ip}}</td>
+                  </tr>   
+            </tbody>
+          </table>
+
+       
+      </ul>
+    </div>
+  </div>  

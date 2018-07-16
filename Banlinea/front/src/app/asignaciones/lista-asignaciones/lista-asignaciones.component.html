@@ -1,0 +1,58 @@
+<br>
+<h3 align="center"> Asignaciones </h3>
+<br>
+<div class="row">
+  
+    <div class="col-md-2 text-center">
+    </div>
+    <div class="col-md-6 text-center">
+      <ul class="list-group">
+
+        <br>
+        
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 200px"> <p align="center">Conductor</p> </th>
+                <th scope="col" style="width: 200px"><p align="center">Ruta</p></th>
+                <th scope="col" style="width: 200px"><p align="center">Pasajero</p></th>
+                <th scope="col" style="width: 600px"><p align="center">Empresa</p></th>
+                <th scope="col" style="width: 200px"><p align="center">Origen</p></th>
+                <th scope="col" style="width: 200px"><p align="center">Destino  </p></th>
+                <th scope="col" style="width: 200px"><p align="center">Desasignar  </p></th>
+                <th scope="col" style="width: 200px"><p align="center">Mapa  </p></th>
+              </tr>
+            </thead>
+            <tbody  *ngFor="let asignacion of asignacionesMostrar">
+          
+                  <tr>
+                    
+                      <td >{{asignacion.conductor.numeroDocumento}} </td>
+                      <td > {{asignacion.ruta.placas}} </td>
+                      <td>{{asignacion.pasajero}}</td>
+                      <td>{{asignacion.empresa}}</td>
+                      <td> ({{asignacion.x1}},{{asignacion.y1}}) </td>
+                      <td> ({{asignacion.x2}},{{asignacion.y2}}) </td>
+                      <td><button type="button" class="btn btn-danger" (click)="desasignar(asignacion)">Desasignar</button></td>  
+                      <td><button type="button" class="btn btn-success" (click)="ver(asignacion.x1,asignacion.y1,asignacion.x2,asignacion.y2)">Ver</button></td>      
+                  </tr>   
+            </tbody>
+          </table>
+
+       
+      </ul>
+    </div>
+  </div>  
+  <div class="row">
+  
+      <div class="col-md-3 text-center">
+      </div>
+
+      <div *ngIf="x1" class="col-md-6 text-center">
+          <app-maps [lat1]="x1" [lng1]="y1" [lat2]="x2" [lng2]="y2"> </app-maps>
+      </div>
+
+      <div class="col-md-3 text-center">
+      </div>
+     
+  </div>  

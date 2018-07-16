@@ -1,0 +1,71 @@
+<br>
+<br>
+
+<div class="row">
+  
+    <div class="col-md-3 text-center">
+    </div>
+    <div class="col-md-6 text-center">
+      <ul class="list-group">
+        <h3> Rutas </h3>
+        <br>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 200px"> <p align="center">Tipo del Vehiculo</p> </th>
+                <th scope="col" style="width: 200px"><p align="center">Placas</p></th>
+                <th scope="col" style="width: 200px"><p align="center">SOAT</p></th>
+                <th scope="col" style="width: 200px"><p align="center">Agregar</p></th>
+              </tr>
+            </thead>
+            <tbody>
+          
+                 
+                  <tr>
+                      <td>  <input [(ngModel)]="tipo" name="tipo" class="form-control" type="text" > </td>
+                      <td>  <input [(ngModel)]="placas" name="placa" class="form-control" type="text"> </td>
+                      <td>  <input [(ngModel)]="SOAT" name="SOAT"class="form-control" type="text" > </td>
+                      <td><button type="button" class="btn btn-success" (click)="agregar()">Agregar</button></td>              
+                  </tr>
+              
+            
+                  
+                  
+            </tbody>
+          </table>
+        <br>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 200px"> <p align="center">Tipo</p> </th>
+                <th scope="col" style="width: 200px"><p align="center">Placas</p></th>
+                <th scope="col" style="width: 200px"><p align="center">SOAT</p></th>
+                <th scope="col" style="width: 200px"><p align="center">Modificar</p></th>
+                <th scope="col" style="width: 200px"><p align="center">Eliminar</p></th>
+              </tr>
+            </thead>
+            <tbody  *ngFor="let ruta of rutas">
+          
+                  <tr > 
+                      <td>{{ruta.tipoVehiculo}}</td>
+                      <td>{{ruta.placas}}</td>
+                      <td>{{ruta.SOAT}}</td>
+                      <td><button type="button" class="btn btn-secondary" data-toggle="collapse" [attr.data-target]="'#' + ruta._id" >Modificar</button></td>
+                      <td><button type="button" class="btn btn-danger" (click)="eliminar(ruta._id)">Eliminar</button></td>    
+                  </tr>
+    
+                  <tr id={{ruta._id}}  class="collapse">
+                      <td>  <input #tipoVehiculo class="form-control" type="text"  value="{{ruta.tipoVehiculo}}"> </td>
+                      <td>{{ruta.placas}}</td>
+                      <td>  <input #SOAT class="form-control" type="text"  value="{{ruta.SOAT}}"> </td>
+                      <td><button type="button" class="btn btn-success" (click)="modificar(tipoVehiculo.value,ruta.placas,SOAT.value)">Guardar</button></td>  
+                      <td><button type="button" class="btn btn-danger" data-toggle="collapse" [attr.data-target]="'#' + ruta._id" >Cancelar</button></td>
+                      
+                  </tr>
+            </tbody>
+          </table>
+
+       
+      </ul>
+    </div>
+  </div>  
